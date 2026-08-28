@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const backToTop = document.getElementById('back-to-top');
     const navbar = document.getElementById('navbar');
     const animateElements = document.querySelectorAll('.animate-on-scroll');
-    const statNumbers = document.querySelectorAll('.stats__number');
 
 
     // === URL-Based Active Nav Highlighting ===
@@ -142,45 +141,6 @@ document.addEventListener('DOMContentLoaded', () => {
     animateElements.forEach(el => scrollObserver.observe(el));
 
 
-    // === Animated Counter (Home page stats) ===
-    let countersAnimated = false;
-
-    function animateCounters() {
-        if (countersAnimated || statNumbers.length === 0) return;
-
-        const statsSection = document.getElementById('stats');
-        if (!statsSection) return;
-
-        const rect = statsSection.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-            countersAnimated = true;
-
-            statNumbers.forEach(counter => {
-                const target = parseInt(counter.getAttribute('data-count'), 10);
-                const duration = 2000;
-                const startTime = performance.now();
-
-                function updateCounter(currentTime) {
-                    const elapsed = currentTime - startTime;
-                    const progress = Math.min(elapsed / duration, 1);
-                    const easedProgress = 1 - (1 - progress) * (1 - progress);
-                    const current = Math.floor(easedProgress * target);
-
-                    counter.textContent = current;
-
-                    if (progress < 1) {
-                        requestAnimationFrame(updateCounter);
-                    } else {
-                        counter.textContent = target;
-                    }
-                }
-
-                requestAnimationFrame(updateCounter);
-            });
-        }
-    }
-
-
     // === Back to Top ===
     if (backToTop) {
         backToTop.addEventListener('click', () => {
@@ -223,7 +183,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!ticking) {
             requestAnimationFrame(() => {
                 handleScroll();
-                animateCounters();
                 ticking = false;
             });
             ticking = true;
