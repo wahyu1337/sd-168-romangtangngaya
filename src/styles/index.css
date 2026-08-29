@@ -1397,6 +1397,84 @@ body.no-scroll {
     box-shadow: var(--shadow-sm);
 }
 
+.profil-detail__role {
+    font-size: var(--fs-md);
+    color: var(--clr-text-light);
+    margin-bottom: var(--space-lg);
+    font-weight: var(--fw-medium);
+    letter-spacing: 0.02em;
+}
+
+/* Biodata Table */
+.biodata-table {
+    width: 100%;
+    max-width: 650px;
+    margin: var(--space-lg) auto 0;
+    text-align: left;
+}
+
+.biodata-table table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid rgba(139, 26, 26, 0.12);
+}
+
+.biodata-table tr {
+    transition: background-color 0.2s ease;
+}
+
+.biodata-table tr:nth-child(even) {
+    background-color: rgba(139, 26, 26, 0.03);
+}
+
+.biodata-table tr:hover {
+    background-color: rgba(139, 26, 26, 0.07);
+}
+
+.biodata-table td {
+    padding: var(--space-md) var(--space-lg);
+    font-size: var(--fs-sm);
+    line-height: 1.6;
+    border-bottom: 1px solid rgba(139, 26, 26, 0.08);
+}
+
+.biodata-table tr:last-child td {
+    border-bottom: none;
+}
+
+.biodata-label {
+    font-weight: var(--fw-semibold);
+    color: var(--clr-primary);
+    white-space: nowrap;
+    width: 40%;
+}
+
+.biodata-separator {
+    width: 20px;
+    text-align: center;
+    color: var(--clr-text-light);
+    font-weight: var(--fw-semibold);
+}
+
+.biodata-value {
+    color: var(--clr-text);
+    font-weight: var(--fw-normal);
+}
+
+@media (max-width: 600px) {
+    .biodata-table td {
+        padding: var(--space-sm) var(--space-md);
+        font-size: var(--fs-xs);
+    }
+
+    .biodata-label {
+        white-space: normal;
+    }
+}
+
 /* Sejarah */
 .sejarah-content {
     display: grid;
@@ -1497,6 +1575,13 @@ body.no-scroll {
     line-height: 1.7;
     border-left: 3px solid var(--clr-accent);
     padding-left: var(--space-md);
+}
+
+.kepsek-card__nip {
+    font-size: var(--fs-sm);
+    opacity: 0.75;
+    font-family: monospace;
+    letter-spacing: 0.05em;
 }
 
 
