@@ -64,6 +64,10 @@ module.exports = {
                     from: 'src/assets',
                     to: 'assets',
                     noErrorOnMissing: true,
+                    globOptions: {
+                        // The legacy PNG is retained in source, but the site serves the smaller WebP logo.
+                        ignore: ['**/logo-sd.png'],
+                    },
                 },
             ],
         }),
