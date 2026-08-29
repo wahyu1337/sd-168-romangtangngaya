@@ -116,6 +116,16 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* Keep long content (email addresses, names, and breadcrumbs) inside the viewport. */
+.header__text,
+.page-banner__content,
+.kontak__item > div:last-child,
+.footer__brand > div,
+.biodata-value {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -376,7 +386,7 @@ body.no-scroll {
     position: fixed;
     top: 0;
     left: 0;
-    width: var(--sidebar-width);
+    width: min(var(--sidebar-width), calc(100vw - 2rem));
     height: 100vh;
     background: var(--clr-white);
     z-index: 200;
@@ -592,7 +602,7 @@ body.no-scroll {
    SECTIONS (General)
    ============================================ */
 .section {
-    padding: var(--space-4xl) var(--space-xl);
+    padding: clamp(3rem, 7vw, var(--space-4xl)) clamp(1rem, 4vw, var(--space-xl));
 }
 
 .section:nth-child(even) {
@@ -995,6 +1005,17 @@ body.no-scroll {
     color: var(--clr-gray-500);
 }
 
+.kontak__map {
+    min-width: 0;
+}
+
+.kontak__map iframe {
+    display: block;
+    width: 100%;
+    min-height: clamp(260px, 40vw, 380px) !important;
+    border-radius: var(--radius-lg);
+}
+
 .kontak__map-placeholder span {
     font-size: 48px;
     margin-bottom: var(--space-sm);
@@ -1107,7 +1128,7 @@ body.no-scroll {
    ============================================ */
 .back-to-top {
     position: fixed;
-    bottom: 30px;
+    bottom: 104px;
     right: 30px;
     width: 48px;
     height: 48px;
@@ -1420,6 +1441,7 @@ body.no-scroll {
     border-radius: var(--radius-md);
     overflow: hidden;
     border: 1px solid rgba(139, 26, 26, 0.12);
+    table-layout: fixed;
 }
 
 .biodata-table tr {
@@ -1461,7 +1483,7 @@ body.no-scroll {
 
 .biodata-value {
     color: var(--clr-text);
-    font-weight: var(--fw-normal);
+    font-weight: var(--fw-regular);
 }
 
 @media (max-width: 600px) {
@@ -1793,11 +1815,11 @@ body.no-scroll {
 
 /* 1. Ultra Wide Desktop (< 1980px) */
 @media (max-width: 1980px) {
-    /* For screens smaller than 1980px, layout is primarily constrained by --max-width (1200px) */
-    /* Ensuring safe padding on extreme edges */
-    .section__inner, .header__inner, .navbar__inner, .footer__inner {
-        padding-left: var(--space-xl);
-        padding-right: var(--space-xl);
+    /* Outer components already provide gutters; avoid applying them twice. */
+    .section__inner,
+    .header__inner,
+    .footer__inner {
+        padding-inline: 0;
     }
 }
 
@@ -1855,9 +1877,12 @@ body.no-scroll {
     .staff__grid,
     .galeri__grid,
     .galeri__grid--preview,
-    .galeri__grid--full,
-    .informasi-card {
+    .galeri__grid--full {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .informasi-card {
+        grid-template-columns: minmax(140px, 200px) 1fr;
     }
 
     .footer__top {
@@ -1989,6 +2014,10 @@ body.no-scroll {
 
     .kontak__map-placeholder {
         min-height: 250px;
+    }
+
+    .kontak__map iframe {
+        min-height: 280px !important;
     }
 
     .galeri__grid {
@@ -2124,6 +2153,14 @@ body.no-scroll {
     .kontak__map-placeholder {
         min-height: 200px;
     }
+
+    .kontak__map iframe {
+        min-height: 240px !important;
+    }
+
+    .biodata-table td {
+        overflow-wrap: anywhere;
+    }
 }
 
 
@@ -2220,6 +2257,10 @@ body.no-scroll {
         right: 20px;
     }
 
+    .back-to-top {
+        bottom: 88px;
+    }
+
     .wa-float__btn {
         width: 52px;
         height: 52px;
@@ -2232,5 +2273,36 @@ body.no-scroll {
 
     .wa-float__label {
         display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .informasi-card {
+        grid-template-columns: 1fr;
+    }
+
+    .informasi-card__image {
+        min-height: 120px;
+    }
+}
+
+@media (max-width: 360px) {
+    .header__title {
+        font-size: 0.75rem;
+    }
+
+    .page-banner__content {
+        padding-inline: var(--space-md);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }
