@@ -1904,6 +1904,8 @@ body.no-scroll {
     object-position: top center;
     border-radius: 50%;
     display: block;
+    position: relative;
+    transform-origin: top center;
 }
 
 .kepsek-card__name {

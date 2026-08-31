@@ -24,10 +24,12 @@
             justify-content: center;
             transition: opacity 0.5s ease, visibility 0.5s ease;
         }
+
         .preloader--hidden {
             opacity: 0;
             visibility: hidden;
         }
+
         .preloader__spinner {
             width: 50px;
             height: 50px;
@@ -36,8 +38,11 @@
             border-radius: 50%;
             animation: preloader-spin 1s linear infinite;
         }
+
         @keyframes preloader-spin {
-            to { transform: rotate(360deg); }
+            to {
+                transform: rotate(360deg);
+            }
         }
     </style>
 </head>
@@ -121,7 +126,8 @@
                 </div>
                 <div class="kepsek-card animate-on-scroll">
                     <div class="kepsek-card__avatar">
-                        <img src="/assets/kepsek.png" alt="Muh. Amir, S.Pd" class="kepsek-card__avatar-img" style="object-position: center 15%;">
+                        <img src="/assets/kepsek.png" alt="Muh. Amir, S.Pd" class="kepsek-card__avatar-img"
+                            style="top: 8px;">
                     </div>
                     <div class="kepsek-card__info">
                         <h3 class="kepsek-card__name">Muh. Amir, S.Pd</h3>
@@ -250,7 +256,9 @@
                 </div>
                 <div class="footer__contact">
                     <h4>Kontak</h4>
-                    <p><a href="https://wa.me/6282347109738?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20SDN%20168%20Inpres%20Romangtangngaya" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">📞 0823-4710-9738 (Operator Sekolah)</a></p>
+                    <p><a href="https://wa.me/6282347109738?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20SDN%20168%20Inpres%20Romangtangngaya"
+                            target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">📞 0823-4710-9738
+                            (Operator Sekolah)</a></p>
                     <p>✉️ sd168romangtanngaya@gmail.com</p>
                     <p>🕐 Senin - Sabtu: 07.00 - 13.00</p>
                 </div>
@@ -265,10 +273,13 @@
 
     <!-- WHATSAPP FLOAT -->
     <a href="https://wa.me/6282347109738?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20SDN%20168%20Inpres%20Romangtangngaya"
-       class="wa-float" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+        class="wa-float" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
         <span class="wa-float__label">Hubungi Kami</span>
         <div class="wa-float__btn">
-            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16.004 0C7.164 0 .004 7.16.004 16c0 2.82.736 5.58 2.14 8.02L.004 32l8.2-2.1A15.9 15.9 0 0 0 16.004 32c8.84 0 16-7.16 16-16s-7.16-16-16-16zm0 29.34c-2.67 0-5.28-.72-7.56-2.08l-.54-.32-5.62 1.44 1.5-5.44-.36-.56A13.22 13.22 0 0 1 2.664 16c0-7.36 5.98-13.34 13.34-13.34S29.344 8.64 29.344 16s-5.98 13.34-13.34 13.34zm7.32-9.98c-.4-.2-2.36-1.16-2.72-1.3-.36-.14-.64-.2-.9.2-.26.4-1.02 1.3-1.26 1.56-.22.26-.46.3-.86.1-.4-.2-1.68-.62-3.2-1.98-1.18-1.06-1.98-2.36-2.22-2.76-.22-.4-.02-.62.18-.82.18-.18.4-.46.6-.7.2-.22.26-.4.4-.66.14-.26.06-.5-.04-.7-.1-.2-.9-2.18-1.24-2.98-.32-.78-.66-.68-.9-.68-.24-.02-.5-.02-.78-.02-.26 0-.7.1-1.08.5-.36.4-1.4 1.36-1.4 3.34 0 1.98 1.44 3.88 1.64 4.14.2.26 2.82 4.32 6.84 6.06.96.42 1.7.66 2.28.86.96.3 1.84.26 2.52.16.78-.12 2.36-.96 2.7-1.9.34-.94.34-1.74.24-1.9-.1-.18-.36-.28-.76-.48z"/></svg>
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M16.004 0C7.164 0 .004 7.16.004 16c0 2.82.736 5.58 2.14 8.02L.004 32l8.2-2.1A15.9 15.9 0 0 0 16.004 32c8.84 0 16-7.16 16-16s-7.16-16-16-16zm0 29.34c-2.67 0-5.28-.72-7.56-2.08l-.54-.32-5.62 1.44 1.5-5.44-.36-.56A13.22 13.22 0 0 1 2.664 16c0-7.36 5.98-13.34 13.34-13.34S29.344 8.64 29.344 16s-5.98 13.34-13.34 13.34zm7.32-9.98c-.4-.2-2.36-1.16-2.72-1.3-.36-.14-.64-.2-.9.2-.26.4-1.02 1.3-1.26 1.56-.22.26-.46.3-.86.1-.4-.2-1.68-.62-3.2-1.98-1.18-1.06-1.98-2.36-2.22-2.76-.22-.4-.02-.62.18-.82.18-.18.4-.46.6-.7.2-.22.26-.4.4-.66.14-.26.06-.5-.04-.7-.1-.2-.9-2.18-1.24-2.98-.32-.78-.66-.68-.9-.68-.24-.02-.5-.02-.78-.02-.26 0-.7.1-1.08.5-.36.4-1.4 1.36-1.4 3.34 0 1.98 1.44 3.88 1.64 4.14.2.26 2.82 4.32 6.84 6.06.96.42 1.7.66 2.28.86.96.3 1.84.26 2.52.16.78-.12 2.36-.96 2.7-1.9.34-.94.34-1.74.24-1.9-.1-.18-.36-.28-.76-.48z" />
+            </svg>
         </div>
     </a>
 </body>
