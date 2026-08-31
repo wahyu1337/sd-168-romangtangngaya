@@ -486,11 +486,11 @@ body.no-scroll {
    ============================================ */
 .hero {
     position: relative;
-    min-height: 500px;
+    min-height: clamp(520px, 68vh, 640px);
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('../assets/hero-bg.png') center/cover no-repeat;
+    background: url('../assets/hero-bg.jpeg') center/cover no-repeat;
     overflow: hidden;
 }
 
@@ -507,13 +507,13 @@ body.no-scroll {
     text-align: center;
     color: var(--clr-white);
     padding: var(--space-4xl) var(--space-xl);
-    max-width: 700px;
+    max-width: 760px;
 }
 
 .hero__badge {
     display: inline-block;
     background: rgba(255, 215, 0, 0.2);
-    border: 1px solid rgba(255, 215, 0, 0.4);
+    border: 1px solid rgba(255, 215, 0, 0.45);
     color: var(--clr-accent-light);
     font-size: var(--fs-sm);
     font-weight: var(--fw-semibold);
@@ -522,14 +522,16 @@ body.no-scroll {
     letter-spacing: 1.5px;
     text-transform: uppercase;
     margin-bottom: var(--space-lg);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     animation: fadeInDown 0.8s ease forwards;
 }
 
 .hero__title {
     font-size: var(--fs-4xl);
     font-weight: var(--fw-extrabold);
-    line-height: 1.15;
-    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    line-height: 1.2;
+    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
     margin-bottom: var(--space-lg);
     animation: fadeInUp 0.8s ease 0.2s forwards;
     opacity: 0;
@@ -539,6 +541,9 @@ body.no-scroll {
     font-size: var(--fs-md);
     font-weight: var(--fw-light);
     line-height: 1.8;
+    max-width: 640px;
+    margin-inline: auto;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
     opacity: 0;
     animation: fadeInUp 0.8s ease 0.4s forwards;
     margin-bottom: var(--space-2xl);
