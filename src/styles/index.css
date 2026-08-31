@@ -1601,6 +1601,218 @@ body.no-scroll {
     }
 }
 
+/* ============================================
+   KEPSEK SHOWCASE PROFILE CARD (Profil page)
+   ============================================ */
+.kepsek-profile-card {
+    background: var(--clr-white);
+    border-radius: var(--radius-xl);
+    padding: clamp(2rem, 4vw, 3.2rem);
+    box-shadow: 0 16px 40px rgba(139, 26, 26, 0.08), 0 4px 16px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(139, 26, 26, 0.12);
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: clamp(2rem, 4vw, 3rem);
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.kepsek-profile-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: var(--gradient-primary);
+}
+
+.kepsek-profile-card__photo-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.kepsek-profile-card__frame {
+    position: relative;
+    width: 100%;
+    max-width: 240px;
+    aspect-ratio: 1 / 1.18;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    background: var(--gradient-dark);
+    border: 4px solid var(--clr-white);
+    outline: 2px solid rgba(139, 26, 26, 0.2);
+    box-shadow: 0 12px 28px rgba(139, 26, 26, 0.22);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.kepsek-profile-card__frame:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(139, 26, 26, 0.32);
+}
+
+.kepsek-profile-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.kepsek-profile-card__badge {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gradient-dark);
+    color: var(--clr-accent);
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-bold);
+    padding: 5px 14px;
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(255, 215, 0, 0.5);
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    letter-spacing: 0.5px;
+}
+
+.kepsek-profile-card__header {
+    margin-bottom: var(--space-md);
+}
+
+.kepsek-profile-card__role-tag {
+    display: inline-block;
+    background: rgba(139, 26, 26, 0.08);
+    color: var(--clr-primary);
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 4px 14px;
+    border-radius: var(--radius-xl);
+    margin-bottom: var(--space-xs);
+    border: 1px solid rgba(139, 26, 26, 0.15);
+}
+
+.kepsek-profile-card__name {
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    font-weight: var(--fw-extrabold);
+    color: var(--clr-primary-dark);
+    line-height: 1.2;
+    margin-bottom: 4px;
+}
+
+.kepsek-profile-card__nip {
+    font-size: var(--fs-sm);
+    color: var(--clr-text-light);
+    font-weight: var(--fw-medium);
+    font-family: monospace;
+    letter-spacing: 0.5px;
+}
+
+.kepsek-profile-card__quote {
+    background: linear-gradient(135deg, rgba(139, 26, 26, 0.04), rgba(255, 215, 0, 0.06));
+    border-left: 4px solid var(--clr-accent);
+    padding: var(--space-md) var(--space-lg);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    font-style: italic;
+    color: var(--clr-text);
+    font-size: var(--fs-sm);
+    line-height: 1.7;
+    margin-bottom: var(--space-lg);
+}
+
+.kepsek-profile-card__biodata {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+}
+
+.kepsek-bio-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    background: var(--clr-gray-50);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--clr-gray-200);
+    transition: all var(--transition-fast);
+}
+
+.kepsek-bio-item:first-child {
+    grid-column: 1 / -1;
+}
+
+.kepsek-bio-item:hover {
+    background: var(--clr-white);
+    border-color: var(--clr-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.kepsek-bio-item__icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: var(--radius-md);
+    background: rgba(139, 26, 26, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.kepsek-bio-item__text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.kepsek-bio-item__text label {
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-semibold);
+    color: var(--clr-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+
+.kepsek-bio-item__text span {
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium);
+    color: var(--clr-text);
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 860px) {
+    .kepsek-profile-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .kepsek-profile-card__photo-col {
+        margin-bottom: var(--space-md);
+    }
+
+    .kepsek-profile-card__biodata {
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+
+    .kepsek-profile-card__quote {
+        border-left: none;
+        border-top: 3px solid var(--clr-accent);
+        border-radius: 0 0 var(--radius-md) var(--radius-md);
+        text-align: center;
+    }
+}
+
 /* Sejarah */
 .sejarah-content {
     display: grid;
