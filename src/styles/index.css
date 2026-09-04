@@ -835,6 +835,14 @@ body.no-scroll {
     font-weight: var(--fw-medium);
 }
 
+.staff__nip {
+    font-size: var(--fs-xs);
+    color: var(--clr-text-light);
+    font-family: monospace;
+    letter-spacing: 0.03em;
+    margin-top: var(--space-xs);
+}
+
 
 /* ============================================
    INFORMASI SECTION
